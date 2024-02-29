@@ -60,3 +60,5 @@ async def help_server(ctx):
     embed.add_field(name="/tolong", value="Menampilkan bantuan", inline=False)
     await ctx.send(embed=embed)
 
+# Jalankan bot
+bot.run(BOT_DISCORD_TOKEN)
