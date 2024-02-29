@@ -7,8 +7,6 @@ from flask import Flask, render_template
 
 load_dotenv()
 
-random_user_agent = ua.random
-
 ATERNOS_TOKEN = os.getenv("ATERNOS_TOKEN")
 SEC = os.getenv("SEC")
 SERVER = os.getenv("SERVER")
