@@ -70,4 +70,4 @@ def home():
     return "Hello, I'm a Discord bot!"
 
 if __name__ == '__main__':
-    app.run(port=5000)  # Port HTTP yang akan digunakan oleh Render
+    app.run(port=10000)  # Port HTTP yang akan digunakan oleh Render
