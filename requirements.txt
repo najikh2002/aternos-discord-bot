@@ -7,7 +7,6 @@ certifi==2024.2.2
 charset-normalizer==3.3.2
 click==8.1.7
 discord.py==2.3.2
-fake-useragent==1.4.0
 Flask==3.0.2
 frozenlist==1.4.1
 gunicorn==21.2.0
