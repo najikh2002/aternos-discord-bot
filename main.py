@@ -4,6 +4,7 @@ import requests
 import asyncio
 import os
 from dotenv import load_dotenv
+from flask import Flask
 
 load_dotenv()
 
@@ -18,6 +19,9 @@ intents = discord.Intents.all()
 intents.messages = True
 
 bot = commands.Bot(command_prefix='/', intents=intents)
+
+# Membuat server HTTP sederhana menggunakan Flask
+app = Flask(__name__)
 
 @bot.event
 async def on_ready():
@@ -60,5 +64,10 @@ async def help_server(ctx):
     embed.add_field(name="/tolong", value="Menampilkan bantuan", inline=False)
     await ctx.send(embed=embed)
 
-# Jalankan bot
-bot.run(BOT_DISCORD_TOKEN)
+# Endpoint HTTP untuk Render
+@app.route('/')
+def home():
+    return "Hello, I'm a Discord bot!"
+
+if __name__ == '__main__':
+    app.run(port=5000)  # Port HTTP yang akan digunakan oleh Render
