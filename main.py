@@ -3,7 +3,6 @@ from discord.ext import commands
 import requests
 import os
 from dotenv import load_dotenv
-from flask import Flask, render_template
 
 load_dotenv()
 
@@ -18,12 +17,6 @@ intents = discord.Intents.all()
 intents.messages = True
 
 bot = commands.Bot(command_prefix='/', intents=intents)
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template('index.html')
 
 @bot.event
 async def on_ready():
@@ -71,13 +64,5 @@ async def help_server(ctx):
     embed.add_field(name="/tolong", value="Menampilkan bantuan", inline=False)
     await ctx.send(embed=embed)
 
-# Jalankan bot dan Flask (harus dijalankan secara bersamaan)
 if __name__ == '__main__':
-    import os
-    from threading import Thread
-
-    def run():
-        app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
-
-    Thread(target=run).start()
     bot.run(BOT_DISCORD_TOKEN)
