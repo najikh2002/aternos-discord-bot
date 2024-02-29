@@ -11,7 +11,7 @@ A simple Discord bot to control your Aternos server.
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.10.x
 - Discord.py library
 - Requests library
 
@@ -20,7 +20,7 @@ A simple Discord bot to control your Aternos server.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/Aternos-Discord-Bot.git
+    git clone https://github.com/najikh2002/aternos-discord-bot.git
     cd Aternos-Discord-Bot
     ```
 
